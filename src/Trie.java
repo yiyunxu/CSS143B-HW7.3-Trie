@@ -83,7 +83,7 @@ public class Trie {
             list.add(searchPhrase.toString()+strComplete);
         }
 
-        for (int i = 0; i<26; i++)
+        for (int i = 0; i<26; i++) // 26 alphabets
         {
             char c = toChar(i);
             if (children.containsKey(c)){

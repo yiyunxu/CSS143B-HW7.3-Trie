@@ -1,4 +1,6 @@
 My code is using Trie data structure to store the vocabularies and traverse the Trie tree to accomplish autocomplete.
+The trie data structure is chosen for its fast retrieval and add time if we use a dictionary to store the links in each
+TrieNode.
 
 The TrieNode class contains the following class instances: a character (letter),  a boolean that indicated whether this
 is the end of a word and a HashMap that contains links to other TrieNodes with their character set as dictionary key.
@@ -9,15 +11,29 @@ The Trie class contains a dummy root node as its class instance and it has all t
 Trie tree.
 
 insert()
-ing elements to the Trie class
-
+For inserting elements to the Trie class, it starts from the root, look for the first letter of the word as the key in
+the root node's HashMap. If such key does not exist, a new TrieNode is created with the letter as key and a new HashMap
+as its value. Then set the current node to be the new TrieNode we just created and continue. If the key does exist, set
+current node to the child node we just found and continue. When there is no more letters left in the word, set the
+boolean isLast to true to indicate that this is the end of the word. The time and storage complexity are both O(n) where
+n represents the length of teh word since HashMap provides O(1) of retrieval.
 
 doesExist()
-This is a function added to help test for the insert() function mentioned above.
-
+This is a function added to help test for the insert() function mentioned above. It goes through the Trie tree and
+checks to see whether the word exist.
 
 search()
+The search() function takes a combination of characters and first goes through the tree to see if the combinations
+exist, this takes O(n) with n being the length of the input phrase. If not, the search will be terminated and return
+empty results. If the exact match is found, the traverseTrie() function is then called to traverse the tree from the
+last TrieNode (letter) location and collect all possible words.
+
 traverseTrie()
+This is a recursive function that checks every possible path and saves the complete word to a list of String. It using
+backtracking to go through all possible scenarios. The for loop used to go through all possible keys could take O(26)
+for each letter. This is the best I could come up with right now.
 
 toChar()
 This is a helper function to help switch from integers to alphabets in the code.
+
+All unit test passed.

@@ -65,6 +65,12 @@ public class TrieTest {
         assertEquals(result.size(), 2);
         assertEquals(result.get(0), "seatac");
         assertEquals(result.get(1), "seattle");
+
+        result = trie.search("se");
+        assertEquals(result.size(), 3);
+        assertEquals(result.get(0), "seatac");
+        assertEquals(result.get(1), "seattle");
+        assertEquals(result.get(2), "see");
     }
 
     @Test
