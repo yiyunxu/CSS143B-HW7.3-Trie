@@ -1,0 +1,23 @@
+My code is using Trie data structure to store the vocabularies and traverse the Trie tree to accomplish autocomplete.
+
+The TrieNode class contains the following class instances: a character (letter),  a boolean that indicated whether this
+is the end of a word and a HashMap that contains links to other TrieNodes with their character set as dictionary key.
+Each TrieNode could have many numbers of children, for up to the total number of alphabets (set for this program). The
+HashMap is the main link between root/subroot to its children.
+
+The Trie class contains a dummy root node as its class instance and it has all the following function to operate as a
+Trie tree.
+
+insert()
+ing elements to the Trie class
+
+
+doesExist()
+This is a function added to help test for the insert() function mentioned above.
+
+
+search()
+traverseTrie()
+
+toChar()
+This is a helper function to help switch from integers to alphabets in the code.
