@@ -52,6 +52,10 @@ public class TrieTest {
         List<String> result = trie.search("how");
         assertEquals(result.size(), 1);
         assertEquals(result.get(0), "how");
+
+        result = trie.search("HOw");
+        assertEquals(result.size(), 1);
+        assertEquals(result.get(0), "how");
     }
 
     @Test

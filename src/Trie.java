@@ -57,7 +57,7 @@ public class Trie {
         List<String> result = new ArrayList<>();
 
         for (int i = 0; i<word.length(); i++){
-            char c = word.charAt(i);
+            char c = word.toLowerCase().charAt(i);
 
             if (children.containsKey(c)){
                 current = children.get(c);
